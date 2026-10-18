@@ -101,3 +101,5 @@ The replication flows expect source connections named `S4_SOURCE` (S/4HANA) and 
 ---
 
 *Questions, feedback or your own war stories? I'd love to hear them. Connect with me on LinkedIn.*
+
+https://www.linkedin.com/in/cyril-adeyemi-333629104/
