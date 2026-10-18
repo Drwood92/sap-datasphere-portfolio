@@ -1,0 +1,315 @@
+{
+  "definitions": {
+    "CY_SQL_ANNUAL_SALES": {
+      "kind": "entity",
+      "elements": {
+        "Year": {
+          "@EndUserText.label": "CALYEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Currency": {
+          "@EndUserText.label": "DOC_CURRCY",
+          "type": "cds.String",
+          "length": 5
+        },
+        "Net_Value": {
+          "@EndUserText.label": "Net_Value",
+          "precision": 18,
+          "scale": 2,
+          "type": "cds.Decimal"
+        }
+      },
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "inner",
+            "args": [
+              {
+                "ref": [
+                  "CY_TAB_SALESHEAD"
+                ],
+                "as": "HEAD"
+              },
+              {
+                "ref": [
+                  "CY_TAB_SALESITEM"
+                ],
+                "as": "ITEM"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "HEAD",
+                  "DOC_NUMBER"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "ITEM",
+                  "DOC_NUMBER"
+                ]
+              }
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "HEAD",
+                "CALYEAR"
+              ],
+              "as": "Year"
+            },
+            {
+              "ref": [
+                "ITEM",
+                "DOC_CURRCY"
+              ],
+              "as": "Currency"
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "ITEM",
+                    "NET_VALUE"
+                  ]
+                }
+              ],
+              "as": "Net_Value"
+            }
+          ],
+          "groupBy": [
+            {
+              "ref": [
+                "HEAD",
+                "CALYEAR"
+              ]
+            },
+            {
+              "ref": [
+                "ITEM",
+                "DOC_CURRCY"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "HEAD",
+                "DOC_TYPE"
+              ]
+            },
+            "=",
+            {
+              "val": "TA"
+            }
+          ]
+        }
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@EndUserText.label": "Annual Sales",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@DataWarehouse.consumption.external": false,
+      "@DataWarehouse.sqlEditor.query": " SELECT \"HEAD\".\"CALYEAR\" AS \"Year\", \n        \"ITEM\".\"DOC_CURRCY\" AS \"Currency\",\n        SUM(\"ITEM\".\"NET_VALUE\") AS \"Net_Value\"\n FROM \"CY_TAB_SALESHEAD\" AS \"HEAD\"\n JOIN \"CY_TAB_SALESITEM\" AS \"ITEM\"\n ON \"HEAD\".\"DOC_NUMBER\" = \"ITEM\".\"DOC_NUMBER\"\n WHERE \"HEAD\".\"DOC_TYPE\" = 'TA'\n GROUP BY \"HEAD\".\"CALYEAR\",\n          \"ITEM\".\"DOC_CURRCY\"",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    },
+    "CY_TAB_SALESHEAD": {
+      "kind": "entity",
+      "@EndUserText.label": "CY_TAB_SALESHEAD",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "elements": {
+        "DOC_NUMBER": {
+          "@EndUserText.label": "DOC_NUMBER",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 10
+        },
+        "RECORDMODE": {
+          "@EndUserText.label": "RECORDMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DOC_TYPE": {
+          "@EndUserText.label": "DOC_TYPE",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SALESORG": {
+          "@EndUserText.label": "SALESORG",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CALDAY": {
+          "@EndUserText.label": "CALDAY",
+          "type": "cds.Date",
+          "key": false
+        },
+        "CALMONTH": {
+          "@EndUserText.label": "CALMONTH",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CALMONTH2": {
+          "@EndUserText.label": "CALMONTH2",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CALYEAR": {
+          "@EndUserText.label": "CALYEAR",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CUSTOMER": {
+          "@EndUserText.label": "CUSTOMER",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ODQ_CHANGEMODE": {
+          "@EndUserText.label": "ODQ_CHANGEMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ODQ_ENTITYCNTR": {
+          "@EndUserText.label": "ODQ_ENTITYCNTR",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 19,
+          "scale": 0
+        }
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    },
+    "CY_TAB_SALESITEM": {
+      "kind": "entity",
+      "@EndUserText.label": "CY_TAB_SALESITEM",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "elements": {
+        "DOC_NUMBER": {
+          "@EndUserText.label": "DOC_NUMBER",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 10
+        },
+        "S_ORD_ITEM": {
+          "@EndUserText.label": "S_ORD_ITEM",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 6
+        },
+        "RECORDMODE": {
+          "@EndUserText.label": "RECORDMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "MATERIAL": {
+          "@EndUserText.label": "MATERIAL",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "CML_OR_QTY": {
+          "@EndUserText.label": "CML_OR_QTY",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "SALES_UNIT": {
+          "@EndUserText.label": "SALES_UNIT",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "NET_VALUE": {
+          "@EndUserText.label": "NET_VALUE",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 2
+        },
+        "COST": {
+          "@EndUserText.label": "COST",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 2
+        },
+        "DOC_CURRCY": {
+          "@EndUserText.label": "DOC_CURRCY",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "ODQ_CHANGEMODE": {
+          "@EndUserText.label": "ODQ_CHANGEMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ODQ_ENTITYCNTR": {
+          "@EndUserText.label": "ODQ_ENTITYCNTR",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 19,
+          "scale": 0
+        }
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "$version": "1.0"
+}

@@ -50,9 +50,44 @@ I wanted to see how my BW world translates. So I built sales header and item ADS
 
 ---
 
+## Project 3: Same data, written in SQL
+
+After clicking my fact view together graphically, I opened **Preview SQL** to see what Datasphere had generated. It showed my join, my filter and my margin calculation, nested from the inside out like an onion. So I started writing views myself.
+
+I built every query step by step and checked the result after each line.
+
+**View 1: how many orders?** `CY_SQL_NO_ORDERS`
+```sql
+SELECT COUNT("DOC_NUMBER") AS "No_of_Orders"
+FROM "CY_TAB_SALESHEAD"
+WHERE "DOC_TYPE" = 'TA'
+```
+It returns **69**, the same number as my fact view and the count distinct measure in the analytic model. That's three layers agreeing, checked with three lines of SQL.
+
+**View 2: annual sales, per currency.** `CY_SQL_ANNUAL_SALES`
+```sql
+SELECT "HEAD"."CALYEAR"        AS "Year",
+       "ITEM"."DOC_CURRCY"     AS "Currency",
+       SUM("ITEM"."NET_VALUE") AS "Net_Value"
+FROM "CY_TAB_SALESHEAD" AS "HEAD"
+JOIN "CY_TAB_SALESITEM" AS "ITEM"
+  ON "HEAD"."DOC_NUMBER" = "ITEM"."DOC_NUMBER"
+WHERE "HEAD"."DOC_TYPE" = 'TA'
+GROUP BY "HEAD"."CALYEAR", "ITEM"."DOC_CURRCY"
+```
+The course exercise sums net value per year and ignores the currency. My data has two sales organisations, one in EUR and one in USD, and 100 € + 100 $ isn't 200 of anything. So I grouped by currency as well.
+
+**Small things that tripped me up:**
+- `'DOC_NUMBER'` in single quotes is a text value, not a column. Names need double quotes: `"DOC_NUMBER"`.
+- A `JOIN` without `ON` isn't finished. The error "expecting 'on'" says exactly that.
+- An aggregated view (only 4 rows) is fine for a check, but a poor base for an analytic model. Keep the fact at item level and let the model do the summing, as you would in BW.
+
+---
+
 ## What I've learned so far
 
 - Datasphere doesn't replace BW thinking. It **rewards** it. Granularity, keys, units and currencies matter just as much.
+- Graphical views are SQL underneath. Reading the generated SQL is the fastest way to understand what you built.
 - The hard parts aren't the clicks. They're the *why*: why Template Type, why 1:n, why exception aggregation.
 - Building it yourself beats watching ten tutorials.
 
@@ -64,9 +99,5 @@ Datasphere → Data Builder → **Import → Import Objects from CSN/JSON File**
 The replication flows expect source connections named `S4_SOURCE` (S/4HANA) and `BW_SOURCE` (BW/4HANA), or you can remap them after import.
 
 ---
-
-## Connect with me on LinkedIn
-
-https://www.linkedin.com/in/cyril-adeyemi-333629104/?isSelfProfile=true
 
 *Questions, feedback or your own war stories? I'd love to hear them. Connect with me on LinkedIn.*

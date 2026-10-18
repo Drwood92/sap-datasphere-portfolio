@@ -1,0 +1,155 @@
+{
+  "definitions": {
+    "CY_SQL_NO_ORDERS": {
+      "kind": "entity",
+      "elements": {
+        "No_of_Orders": {
+          "@EndUserText.label": "No_of_Orders",
+          "type": "cds.Integer64"
+        }
+      },
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "CY_TAB_SALESHEAD"
+            ]
+          },
+          "columns": [
+            {
+              "func": "COUNT",
+              "args": [
+                {
+                  "ref": [
+                    "DOC_NUMBER"
+                  ]
+                }
+              ],
+              "as": "No_of_Orders"
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "DOC_TYPE"
+              ]
+            },
+            "=",
+            {
+              "val": "TA"
+            }
+          ]
+        }
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@EndUserText.label": "Sales Orders Count",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@DataWarehouse.consumption.external": false,
+      "@DataWarehouse.sqlEditor.query": "SELECT COUNT(\"DOC_NUMBER\") AS \"No_of_Orders\"\nFROM \"CY_TAB_SALESHEAD\"\nWHERE \"DOC_TYPE\" = 'TA'",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    },
+    "CY_TAB_SALESHEAD": {
+      "kind": "entity",
+      "@EndUserText.label": "CY_TAB_SALESHEAD",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "elements": {
+        "DOC_NUMBER": {
+          "@EndUserText.label": "DOC_NUMBER",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 10
+        },
+        "RECORDMODE": {
+          "@EndUserText.label": "RECORDMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DOC_TYPE": {
+          "@EndUserText.label": "DOC_TYPE",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SALESORG": {
+          "@EndUserText.label": "SALESORG",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CALDAY": {
+          "@EndUserText.label": "CALDAY",
+          "type": "cds.Date",
+          "key": false
+        },
+        "CALMONTH": {
+          "@EndUserText.label": "CALMONTH",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CALMONTH2": {
+          "@EndUserText.label": "CALMONTH2",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CALYEAR": {
+          "@EndUserText.label": "CALYEAR",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CUSTOMER": {
+          "@EndUserText.label": "CUSTOMER",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ODQ_CHANGEMODE": {
+          "@EndUserText.label": "ODQ_CHANGEMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ODQ_ENTITYCNTR": {
+          "@EndUserText.label": "ODQ_ENTITYCNTR",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 19,
+          "scale": 0
+        }
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "$version": "1.0"
+}
