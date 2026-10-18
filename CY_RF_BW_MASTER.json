@@ -1,0 +1,2777 @@
+{
+  "definitions": {
+    "CY_TAB_MAT_P": {
+      "kind": "entity",
+      "@EndUserText.label": "CY_TAB_MAT_P",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "elements": {
+        "MATERIAL": {
+          "@EndUserText.label": "MATERIAL",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 40
+        },
+        "MSA_USAGE": {
+          "@EndUserText.label": "MSA_USAGE",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "NET_CONT": {
+          "@EndUserText.label": "NET_CONT",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "NET_WEIGHT": {
+          "@EndUserText.label": "NET_WEIGHT",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "PO_UNIT": {
+          "@EndUserText.label": "PO_UNIT",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "PROD_HIER": {
+          "@EndUserText.label": "PROD_HIER",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "RPA_WGH1": {
+          "@EndUserText.label": "RPA_WGH1",
+          "type": "cds.String",
+          "key": false,
+          "length": 9
+        },
+        "RPA_WGH2": {
+          "@EndUserText.label": "RPA_WGH2",
+          "type": "cds.String",
+          "key": false,
+          "length": 9
+        },
+        "RPA_WGH3": {
+          "@EndUserText.label": "RPA_WGH3",
+          "type": "cds.String",
+          "key": false,
+          "length": 9
+        },
+        "RPA_WGH4": {
+          "@EndUserText.label": "RPA_WGH4",
+          "type": "cds.String",
+          "key": false,
+          "length": 9
+        },
+        "RTPLCST": {
+          "@EndUserText.label": "RTPLCST",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 2
+        },
+        "RT_COLOR": {
+          "@EndUserText.label": "RT_COLOR",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "RT_CONFMAT": {
+          "@EndUserText.label": "RT_CONFMAT",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "RT_FASHGRD": {
+          "@EndUserText.label": "RT_FASHGRD",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RT_MDRELST": {
+          "@EndUserText.label": "RT_MDRELST",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "RT_PRRULE": {
+          "@EndUserText.label": "RT_PRRULE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "RT_SEAYR": {
+          "@EndUserText.label": "RT_SEAYR",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RT_SIZE": {
+          "@EndUserText.label": "RT_SIZE",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "RT_SUPS": {
+          "@EndUserText.label": "RT_SUPS",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SIZE_DIM": {
+          "@EndUserText.label": "SIZE_DIM",
+          "type": "cds.String",
+          "key": false,
+          "length": 32
+        },
+        "STD_DESCR": {
+          "@EndUserText.label": "STD_DESCR",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "UCCERTIFTY": {
+          "@EndUserText.label": "UCCERTIFTY",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "UCCONSTCLA": {
+          "@EndUserText.label": "UCCONSTCLA",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "UCFUNCCLAS": {
+          "@EndUserText.label": "UCFUNCCLAS",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "UNIT_DIM": {
+          "@EndUserText.label": "UNIT_DIM",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "UNIT_OF_WT": {
+          "@EndUserText.label": "UNIT_OF_WT",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "VENDOR": {
+          "@EndUserText.label": "VENDOR",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "VOLUME": {
+          "@EndUserText.label": "VOLUME",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "VOLUMEUNIT": {
+          "@EndUserText.label": "VOLUMEUNIT",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "WIDTH": {
+          "@EndUserText.label": "WIDTH",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "DF_DGNR": {
+          "@EndUserText.label": "DF_DGNR",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "DF_PROFILE": {
+          "@EndUserText.label": "DF_PROFILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "RF_SIZE2": {
+          "@EndUserText.label": "RF_SIZE2",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "RF_BNDID": {
+          "@EndUserText.label": "RF_BNDID",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RF_FRECHAR": {
+          "@EndUserText.label": "RF_FRECHAR",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "AF_COLOR": {
+          "@EndUserText.label": "AF_COLOR",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AF_FCOCO": {
+          "@EndUserText.label": "AF_FCOCO",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AF_GENDER": {
+          "@EndUserText.label": "AF_GENDER",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "AF_GRID": {
+          "@EndUserText.label": "AF_GRID",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "AF_STYLE": {
+          "@EndUserText.label": "AF_STYLE",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "APO_PROD": {
+          "@EndUserText.label": "APO_PROD",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BASE_UOM": {
+          "@EndUserText.label": "BASE_UOM",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "BASIC_MATL": {
+          "@EndUserText.label": "BASIC_MATL",
+          "type": "cds.String",
+          "key": false,
+          "length": 14
+        },
+        "BBP_PROD": {
+          "@EndUserText.label": "BBP_PROD",
+          "type": "cds.String",
+          "key": false,
+          "length": 32
+        },
+        "COMPETITOR": {
+          "@EndUserText.label": "COMPETITOR",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CONT_UNIT": {
+          "@EndUserText.label": "CONT_UNIT",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "CREATEDON": {
+          "@EndUserText.label": "CREATEDON",
+          "type": "cds.Date",
+          "key": false
+        },
+        "CRM_PROD": {
+          "@EndUserText.label": "CRM_PROD",
+          "type": "cds.String",
+          "key": false,
+          "length": 32
+        },
+        "DIVISION": {
+          "@EndUserText.label": "DIVISION",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "EANUPC": {
+          "@EndUserText.label": "EANUPC",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "EXTMATLGRP": {
+          "@EndUserText.label": "EXTMATLGRP",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "GROSS_CONT": {
+          "@EndUserText.label": "GROSS_CONT",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "GROSS_WT": {
+          "@EndUserText.label": "GROSS_WT",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "HEIGHT": {
+          "@EndUserText.label": "HEIGHT",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "IND_SECTOR": {
+          "@EndUserText.label": "IND_SECTOR",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "LENGHT": {
+          "@EndUserText.label": "LENGHT",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "LOC_CURRCY": {
+          "@EndUserText.label": "LOC_CURRCY",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "LOGSYS": {
+          "@EndUserText.label": "LOGSYS",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "MANUFACTOR": {
+          "@EndUserText.label": "MANUFACTOR",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "MANU_MATNR": {
+          "@EndUserText.label": "MANU_MATNR",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "MATL_CAT": {
+          "@EndUserText.label": "MATL_CAT",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "MATL_GROUP": {
+          "@EndUserText.label": "MATL_GROUP",
+          "type": "cds.String",
+          "key": false,
+          "length": 9
+        },
+        "MATL_TYPE": {
+          "@EndUserText.label": "MATL_TYPE",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ODQ_CHANGEMODE": {
+          "@EndUserText.label": "ODQ_CHANGEMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ODQ_ENTITYCNTR": {
+          "@EndUserText.label": "ODQ_ENTITYCNTR",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 19,
+          "scale": 0
+        }
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    },
+    "CY_TAB_CUST_P": {
+      "kind": "entity",
+      "@EndUserText.label": "CY_TAB_CUST_P",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "elements": {
+        "CUSTOMER": {
+          "@EndUserText.label": "CUSTOMER",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 10
+        },
+        "ADDR_NUMBR": {
+          "@EndUserText.label": "ADDR_NUMBR",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "AF_CUSTDC": {
+          "@EndUserText.label": "AF_CUSTDC",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "AF_CUSTID": {
+          "@EndUserText.label": "AF_CUSTID",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ALTITUDE": {
+          "@EndUserText.label": "ALTITUDE",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 3
+        },
+        "APO_LOCNO": {
+          "@EndUserText.label": "APO_LOCNO",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "BPARTNER": {
+          "@EndUserText.label": "BPARTNER",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CITY": {
+          "@EndUserText.label": "CITY",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "CITY_2": {
+          "@EndUserText.label": "CITY_2",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "COUNTRY": {
+          "@EndUserText.label": "COUNTRY",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "CUST_CLASS": {
+          "@EndUserText.label": "CUST_CLASS",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CUST_MKT": {
+          "@EndUserText.label": "CUST_MKT",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CUS_F_CONS": {
+          "@EndUserText.label": "CUS_F_CONS",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "FAX_NUM": {
+          "@EndUserText.label": "FAX_NUM",
+          "type": "cds.String",
+          "key": false,
+          "length": 31
+        },
+        "FISCVARNT": {
+          "@EndUserText.label": "FISCVARNT",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "ID_TXNUMB3": {
+          "@EndUserText.label": "ID_TXNUMB3",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "ID_XCPD": {
+          "@EndUserText.label": "ID_XCPD",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "INDUSTRY": {
+          "@EndUserText.label": "INDUSTRY",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "IND_CODE_1": {
+          "@EndUserText.label": "IND_CODE_1",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IND_CODE_2": {
+          "@EndUserText.label": "IND_CODE_2",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IND_CODE_3": {
+          "@EndUserText.label": "IND_CODE_3",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IND_CODE_4": {
+          "@EndUserText.label": "IND_CODE_4",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IND_CODE_5": {
+          "@EndUserText.label": "IND_CODE_5",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "KEYACCOUNT": {
+          "@EndUserText.label": "KEYACCOUNT",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "LANGU": {
+          "@EndUserText.label": "LANGU",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "LATITUDE": {
+          "@EndUserText.label": "LATITUDE",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 17,
+          "scale": 12
+        },
+        "LOGSYS": {
+          "@EndUserText.label": "LOGSYS",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LONGITUDE": {
+          "@EndUserText.label": "LONGITUDE",
+          "type": "cds.Double",
+          "key": false
+        },
+        "NAME": {
+          "@EndUserText.label": "NAME",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "NAME2": {
+          "@EndUserText.label": "NAME2",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "NAME3": {
+          "@EndUserText.label": "NAME3",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "NIELSEN_ID": {
+          "@EndUserText.label": "NIELSEN_ID",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "OUTL_TYPE": {
+          "@EndUserText.label": "OUTL_TYPE",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "PCOMPANY": {
+          "@EndUserText.label": "PCOMPANY",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "PHONE": {
+          "@EndUserText.label": "PHONE",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "PLANT": {
+          "@EndUserText.label": "PLANT",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "POBOX": {
+          "@EndUserText.label": "POBOX",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "POBOX_LOC": {
+          "@EndUserText.label": "POBOX_LOC",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "POSTAL_CD": {
+          "@EndUserText.label": "POSTAL_CD",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "POSTCD_BOX": {
+          "@EndUserText.label": "POSTCD_BOX",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "POSTCD_GIS": {
+          "@EndUserText.label": "POSTCD_GIS",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "PRECISID": {
+          "@EndUserText.label": "PRECISID",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "REGION": {
+          "@EndUserText.label": "REGION",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "SORTL": {
+          "@EndUserText.label": "SORTL",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SRCID": {
+          "@EndUserText.label": "SRCID",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "STREET": {
+          "@EndUserText.label": "STREET",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "TAX_NUMB": {
+          "@EndUserText.label": "TAX_NUMB",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "TAX_NUMB2": {
+          "@EndUserText.label": "TAX_NUMB2",
+          "type": "cds.String",
+          "key": false,
+          "length": 11
+        },
+        "USAGE_IND": {
+          "@EndUserText.label": "USAGE_IND",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "VENDOR": {
+          "@EndUserText.label": "VENDOR",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "VISIT_RYT": {
+          "@EndUserText.label": "VISIT_RYT",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ACCNT_GRP": {
+          "@EndUserText.label": "ACCNT_GRP",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "DBDUNS_NUM": {
+          "@EndUserText.label": "DBDUNS_NUM",
+          "type": "cds.String",
+          "key": false,
+          "length": 9
+        },
+        "ODQ_CHANGEMODE": {
+          "@EndUserText.label": "ODQ_CHANGEMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ODQ_ENTITYCNTR": {
+          "@EndUserText.label": "ODQ_ENTITYCNTR",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 19,
+          "scale": 0
+        }
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "replicationflows": {
+    "CY_RF_BW_MASTER": {
+      "kind": "sap.dis.replicationflow",
+      "@EndUserText.label": "RF CY BW Master",
+      "contents": {
+        "description": "CY_RF_BW_MASTER",
+        "sourceSystem": [
+          {
+            "connectionId": "BW_SOURCE",
+            "connectionType": "SAPBW",
+            "container": "/BW",
+            "maxConnections": 10,
+            "isGeneric": false,
+            "metadata": {},
+            "properties": {
+              "odp.read.maxPartitions": "3",
+              "odp.read.truncateLongData": "true",
+              "odp.read.replaceInvalidCharacter": "true"
+            }
+          }
+        ],
+        "targetSystem": [
+          {
+            "connectionId": "$DWC",
+            "connectionType": "HANA",
+            "container": "",
+            "maxConnections": 10,
+            "isGeneric": false,
+            "metadata": {
+              "connectionMetaschema": {
+                "sources": [
+                  "SAP"
+                ]
+              }
+            }
+          }
+        ],
+        "vTypes": {
+          "scalar": {
+            "string_10": {
+              "name": "string_10",
+              "description": "String(10)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 10
+            },
+            "decimal_17_3": {
+              "name": "decimal_17_3",
+              "description": "Decimal(17,3)",
+              "vflow.type": "scalar",
+              "template": "decimal",
+              "value.precision": 17,
+              "value.scale": 3
+            },
+            "string_20": {
+              "name": "string_20",
+              "description": "String(20)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 20
+            },
+            "string_35": {
+              "name": "string_35",
+              "description": "String(35)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 35
+            },
+            "string_40": {
+              "name": "string_40",
+              "description": "String(40)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 40
+            },
+            "string_3": {
+              "name": "string_3",
+              "description": "String(3)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 3
+            },
+            "string_2": {
+              "name": "string_2",
+              "description": "String(2)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 2
+            },
+            "string_4": {
+              "name": "string_4",
+              "description": "String(4)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 4
+            },
+            "string_1": {
+              "name": "string_1",
+              "description": "String(1)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 1
+            },
+            "string_31": {
+              "name": "string_31",
+              "description": "String(31)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 31
+            },
+            "string_18": {
+              "name": "string_18",
+              "description": "String(18)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 18
+            },
+            "decimal_17_12": {
+              "name": "decimal_17_12",
+              "description": "Decimal(17,12)",
+              "vflow.type": "scalar",
+              "template": "decimal",
+              "value.precision": 17,
+              "value.scale": 12
+            },
+            "string_6": {
+              "name": "string_6",
+              "description": "String(6)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 6
+            },
+            "string_16": {
+              "name": "string_16",
+              "description": "String(16)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 16
+            },
+            "string_11": {
+              "name": "string_11",
+              "description": "String(11)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 11
+            },
+            "string_9": {
+              "name": "string_9",
+              "description": "String(9)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 9
+            },
+            "decimal_19_0": {
+              "name": "decimal_19_0",
+              "description": "Decimal(19,0)",
+              "vflow.type": "scalar",
+              "template": "decimal",
+              "value.precision": 19,
+              "value.scale": 0
+            },
+            "decimal_17_2": {
+              "name": "decimal_17_2",
+              "description": "Decimal(17,2)",
+              "vflow.type": "scalar",
+              "template": "decimal",
+              "value.precision": 17,
+              "value.scale": 2
+            },
+            "string_32": {
+              "name": "string_32",
+              "description": "String(32)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 32
+            },
+            "string_8": {
+              "name": "string_8",
+              "description": "String(8)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 8
+            },
+            "string_5": {
+              "name": "string_5",
+              "description": "String(5)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 5
+            },
+            "string_14": {
+              "name": "string_14",
+              "description": "String(14)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 14
+            }
+          }
+        },
+        "replicationTasks": [
+          {
+            "name": "replicationtask1",
+            "loadType": "INITIAL",
+            "priority": 50,
+            "truncate": false,
+            "sourceObject": {
+              "name": "0CUSTOMER$P",
+              "definition": {
+                "columns": [
+                  {
+                    "name": "CUSTOMER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "key": true,
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ADDR_NUMBR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_CUSTDC",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_CUSTID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ALTITUDE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "APO_LOCNO",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_20",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "BPARTNER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CITY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CITY_2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "COUNTRY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CUST_CLASS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CUST_MKT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CUS_F_CONS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "FAX_NUM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_31",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "FISCVARNT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ID_TXNUMB3",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ID_XCPD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "INDUSTRY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_1",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_3",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_4",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_5",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "KEYACCOUNT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LANGU",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LATITUDE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_12",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LOGSYS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LONGITUDE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.float64",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NAME",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NAME2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NAME3",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NIELSEN_ID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "OUTL_TYPE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PCOMPANY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_6",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PHONE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_16",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PLANT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POBOX",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POBOX_LOC",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POSTAL_CD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POSTCD_BOX",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POSTCD_GIS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PRECISID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "REGION",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SORTL",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SRCID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "STREET",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "TAX_NUMB",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_16",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "TAX_NUMB2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_11",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "USAGE_IND",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VENDOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VISIT_RYT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ACCNT_GRP",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DBDUNS_NUM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_CHANGEMODE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_ENTITYCNTR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_19_0",
+                    "metadata": {}
+                  }
+                ],
+                "keys": [
+                  "CUSTOMER"
+                ]
+              },
+              "metadata": {
+                "type": "tabular",
+                "isDeltaDisabled": true
+              },
+              "properties": {
+                "odp.read.maxPartitions": "3",
+                "odp.read.truncateLongData": "true",
+                "odp.read.replaceInvalidCharacter": "true"
+              }
+            },
+            "targetObject": {
+              "name": "CY_TAB_CUST_P",
+              "definition": {
+                "columns": [
+                  {
+                    "name": "CUSTOMER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "key": true,
+                    "businessName": "CUSTOMER",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ADDR_NUMBR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "ADDR_NUMBR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_CUSTDC",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "AF_CUSTDC",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_CUSTID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "AF_CUSTID",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ALTITUDE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "businessName": "ALTITUDE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "APO_LOCNO",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_20",
+                    "businessName": "APO_LOCNO",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "BPARTNER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "BPARTNER",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CITY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "businessName": "CITY",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CITY_2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "businessName": "CITY_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "COUNTRY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "COUNTRY",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CUST_CLASS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "CUST_CLASS",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CUST_MKT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "CUST_MKT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CUS_F_CONS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "CUS_F_CONS",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "FAX_NUM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_31",
+                    "businessName": "FAX_NUM",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "FISCVARNT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "FISCVARNT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ID_TXNUMB3",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "ID_TXNUMB3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ID_XCPD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "ID_XCPD",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "INDUSTRY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "INDUSTRY",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_1",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "IND_CODE_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "IND_CODE_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_3",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "IND_CODE_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_4",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "IND_CODE_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_CODE_5",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "IND_CODE_5",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "KEYACCOUNT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "KEYACCOUNT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LANGU",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "LANGU",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LATITUDE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_12",
+                    "businessName": "LATITUDE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LOGSYS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "LOGSYS",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LONGITUDE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.float64",
+                    "businessName": "LONGITUDE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NAME",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "businessName": "NAME",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NAME2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "businessName": "NAME2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NAME3",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "businessName": "NAME3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NIELSEN_ID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "NIELSEN_ID",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "OUTL_TYPE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "OUTL_TYPE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PCOMPANY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_6",
+                    "businessName": "PCOMPANY",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PHONE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_16",
+                    "businessName": "PHONE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PLANT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "PLANT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POBOX",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "POBOX",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POBOX_LOC",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "businessName": "POBOX_LOC",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POSTAL_CD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "POSTAL_CD",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POSTCD_BOX",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "POSTCD_BOX",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "POSTCD_GIS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "POSTCD_GIS",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PRECISID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "PRECISID",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "REGION",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "REGION",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SORTL",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "SORTL",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SRCID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "SRCID",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "STREET",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_35",
+                    "businessName": "STREET",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "TAX_NUMB",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_16",
+                    "businessName": "TAX_NUMB",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "TAX_NUMB2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_11",
+                    "businessName": "TAX_NUMB2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "USAGE_IND",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "USAGE_IND",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VENDOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "VENDOR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VISIT_RYT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "VISIT_RYT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ACCNT_GRP",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "ACCNT_GRP",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DBDUNS_NUM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "businessName": "DBDUNS_NUM",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_CHANGEMODE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "ODQ_CHANGEMODE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_ENTITYCNTR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_19_0",
+                    "businessName": "ODQ_ENTITYCNTR",
+                    "metadata": {}
+                  }
+                ],
+                "keys": [
+                  "CUSTOMER"
+                ]
+              },
+              "metadata": {
+                "isNew": false
+              },
+              "businessName": "CY_TAB_CUST_P"
+            }
+          },
+          {
+            "name": "replicationtask11",
+            "loadType": "INITIAL",
+            "priority": 50,
+            "truncate": false,
+            "sourceObject": {
+              "name": "0MATERIAL$P",
+              "definition": {
+                "columns": [
+                  {
+                    "name": "MATERIAL",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "key": true,
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MSA_USAGE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NET_CONT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NET_WEIGHT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PO_UNIT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PROD_HIER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RPA_WGH1",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RPA_WGH2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RPA_WGH3",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RPA_WGH4",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RTPLCST",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_COLOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_CONFMAT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_FASHGRD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_MDRELST",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_PRRULE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_SEAYR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_SIZE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_SUPS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SIZE_DIM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_32",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "STD_DESCR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UCCERTIFTY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UCCONSTCLA",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_8",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UCFUNCCLAS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_8",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UNIT_DIM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UNIT_OF_WT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VENDOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VOLUME",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VOLUMEUNIT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "WIDTH",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DF_DGNR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DF_PROFILE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RF_SIZE2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RF_BNDID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RF_FRECHAR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_COLOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_5",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_FCOCO",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_5",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_GENDER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_GRID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_STYLE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "APO_PROD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "BASE_UOM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "BASIC_MATL",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_14",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "BBP_PROD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_32",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "COMPETITOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CONT_UNIT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CREATEDON",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.date",
+                    "metadata": {
+                      "nativeType": {
+                        "datatype": "string",
+                        "length": 10
+                      },
+                      "TemplateType": {
+                        "datatype": "date"
+                      }
+                    }
+                  },
+                  {
+                    "name": "CRM_PROD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_32",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DIVISION",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "EANUPC",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "EXTMATLGRP",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "GROSS_CONT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "GROSS_WT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "HEIGHT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_SECTOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LENGHT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LOC_CURRCY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_5",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LOGSYS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MANUFACTOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MANU_MATNR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MATL_CAT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MATL_GROUP",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MATL_TYPE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_CHANGEMODE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_ENTITYCNTR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_19_0",
+                    "metadata": {}
+                  }
+                ],
+                "keys": [
+                  "MATERIAL"
+                ]
+              },
+              "metadata": {
+                "type": "tabular",
+                "isDeltaDisabled": true
+              },
+              "properties": {
+                "odp.read.maxPartitions": "3",
+                "odp.read.truncateLongData": "true",
+                "odp.read.replaceInvalidCharacter": "true"
+              }
+            },
+            "targetObject": {
+              "name": "CY_TAB_MAT_P",
+              "definition": {
+                "columns": [
+                  {
+                    "name": "MATERIAL",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "key": true,
+                    "businessName": "MATERIAL",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MSA_USAGE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "MSA_USAGE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NET_CONT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "businessName": "NET_CONT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "NET_WEIGHT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "businessName": "NET_WEIGHT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PO_UNIT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "PO_UNIT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PROD_HIER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "PROD_HIER",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RPA_WGH1",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "businessName": "RPA_WGH1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RPA_WGH2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "businessName": "RPA_WGH2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RPA_WGH3",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "businessName": "RPA_WGH3",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RPA_WGH4",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "businessName": "RPA_WGH4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RTPLCST",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_2",
+                    "businessName": "RTPLCST",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_COLOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "RT_COLOR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_CONFMAT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "RT_CONFMAT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_FASHGRD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "RT_FASHGRD",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_MDRELST",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "RT_MDRELST",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_PRRULE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "RT_PRRULE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_SEAYR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "RT_SEAYR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_SIZE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "RT_SIZE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RT_SUPS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "RT_SUPS",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SIZE_DIM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_32",
+                    "businessName": "SIZE_DIM",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "STD_DESCR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "STD_DESCR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UCCERTIFTY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "UCCERTIFTY",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UCCONSTCLA",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_8",
+                    "businessName": "UCCONSTCLA",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UCFUNCCLAS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_8",
+                    "businessName": "UCFUNCCLAS",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UNIT_DIM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "UNIT_DIM",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "UNIT_OF_WT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "UNIT_OF_WT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VENDOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "VENDOR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VOLUME",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "businessName": "VOLUME",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "VOLUMEUNIT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "VOLUMEUNIT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "WIDTH",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "businessName": "WIDTH",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DF_DGNR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "DF_DGNR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DF_PROFILE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "DF_PROFILE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RF_SIZE2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "RF_SIZE2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RF_BNDID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "RF_BNDID",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RF_FRECHAR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "RF_FRECHAR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_COLOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_5",
+                    "businessName": "AF_COLOR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_FCOCO",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_5",
+                    "businessName": "AF_FCOCO",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_GENDER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "AF_GENDER",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_GRID",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "AF_GRID",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "AF_STYLE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "AF_STYLE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "APO_PROD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "businessName": "APO_PROD",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "BASE_UOM",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "BASE_UOM",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "BASIC_MATL",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_14",
+                    "businessName": "BASIC_MATL",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "BBP_PROD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_32",
+                    "businessName": "BBP_PROD",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "COMPETITOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "COMPETITOR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CONT_UNIT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "CONT_UNIT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CREATEDON",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.date",
+                    "businessName": "CREATEDON",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CRM_PROD",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_32",
+                    "businessName": "CRM_PROD",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DIVISION",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "DIVISION",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "EANUPC",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "EANUPC",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "EXTMATLGRP",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_18",
+                    "businessName": "EXTMATLGRP",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "GROSS_CONT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "businessName": "GROSS_CONT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "GROSS_WT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "businessName": "GROSS_WT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "HEIGHT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "businessName": "HEIGHT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "IND_SECTOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "IND_SECTOR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LENGHT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_17_3",
+                    "businessName": "LENGHT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LOC_CURRCY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_5",
+                    "businessName": "LOC_CURRCY",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "LOGSYS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "LOGSYS",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MANUFACTOR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "MANUFACTOR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MANU_MATNR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "businessName": "MANU_MATNR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MATL_CAT",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "MATL_CAT",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MATL_GROUP",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_9",
+                    "businessName": "MATL_GROUP",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MATL_TYPE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "MATL_TYPE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_CHANGEMODE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "ODQ_CHANGEMODE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_ENTITYCNTR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_19_0",
+                    "businessName": "ODQ_ENTITYCNTR",
+                    "metadata": {}
+                  }
+                ],
+                "keys": [
+                  "MATERIAL"
+                ]
+              },
+              "metadata": {
+                "isNew": false
+              },
+              "businessName": "CY_TAB_MAT_P"
+            }
+          }
+        ],
+        "replicationTaskSetting": {
+          "hasSkipMappingCapability": true
+        },
+        "replicationFlowSetting": {
+          "ABAPcontentType": "Template Type"
+        },
+        "deltaLoadTrigger": "ON_DELTA_INTERVAL"
+      },
+      "sources": {},
+      "targets": {
+        "CY_TAB_CUST_P": {
+          "elements": {
+            "CUSTOMER": {},
+            "ADDR_NUMBR": {},
+            "AF_CUSTDC": {},
+            "AF_CUSTID": {},
+            "ALTITUDE": {},
+            "APO_LOCNO": {},
+            "BPARTNER": {},
+            "CITY": {},
+            "CITY_2": {},
+            "COUNTRY": {},
+            "CUST_CLASS": {},
+            "CUST_MKT": {},
+            "CUS_F_CONS": {},
+            "FAX_NUM": {},
+            "FISCVARNT": {},
+            "ID_TXNUMB3": {},
+            "ID_XCPD": {},
+            "INDUSTRY": {},
+            "IND_CODE_1": {},
+            "IND_CODE_2": {},
+            "IND_CODE_3": {},
+            "IND_CODE_4": {},
+            "IND_CODE_5": {},
+            "KEYACCOUNT": {},
+            "LANGU": {},
+            "LATITUDE": {},
+            "LOGSYS": {},
+            "LONGITUDE": {},
+            "NAME": {},
+            "NAME2": {},
+            "NAME3": {},
+            "NIELSEN_ID": {},
+            "OUTL_TYPE": {},
+            "PCOMPANY": {},
+            "PHONE": {},
+            "PLANT": {},
+            "POBOX": {},
+            "POBOX_LOC": {},
+            "POSTAL_CD": {},
+            "POSTCD_BOX": {},
+            "POSTCD_GIS": {},
+            "PRECISID": {},
+            "REGION": {},
+            "SORTL": {},
+            "SRCID": {},
+            "STREET": {},
+            "TAX_NUMB": {},
+            "TAX_NUMB2": {},
+            "USAGE_IND": {},
+            "VENDOR": {},
+            "VISIT_RYT": {},
+            "ACCNT_GRP": {},
+            "DBDUNS_NUM": {},
+            "ODQ_CHANGEMODE": {},
+            "ODQ_ENTITYCNTR": {}
+          }
+        },
+        "CY_TAB_MAT_P": {
+          "elements": {
+            "MATERIAL": {},
+            "MSA_USAGE": {},
+            "NET_CONT": {},
+            "NET_WEIGHT": {},
+            "PO_UNIT": {},
+            "PROD_HIER": {},
+            "RPA_WGH1": {},
+            "RPA_WGH2": {},
+            "RPA_WGH3": {},
+            "RPA_WGH4": {},
+            "RTPLCST": {},
+            "RT_COLOR": {},
+            "RT_CONFMAT": {},
+            "RT_FASHGRD": {},
+            "RT_MDRELST": {},
+            "RT_PRRULE": {},
+            "RT_SEAYR": {},
+            "RT_SIZE": {},
+            "RT_SUPS": {},
+            "SIZE_DIM": {},
+            "STD_DESCR": {},
+            "UCCERTIFTY": {},
+            "UCCONSTCLA": {},
+            "UCFUNCCLAS": {},
+            "UNIT_DIM": {},
+            "UNIT_OF_WT": {},
+            "VENDOR": {},
+            "VOLUME": {},
+            "VOLUMEUNIT": {},
+            "WIDTH": {},
+            "DF_DGNR": {},
+            "DF_PROFILE": {},
+            "RF_SIZE2": {},
+            "RF_BNDID": {},
+            "RF_FRECHAR": {},
+            "AF_COLOR": {},
+            "AF_FCOCO": {},
+            "AF_GENDER": {},
+            "AF_GRID": {},
+            "AF_STYLE": {},
+            "APO_PROD": {},
+            "BASE_UOM": {},
+            "BASIC_MATL": {},
+            "BBP_PROD": {},
+            "COMPETITOR": {},
+            "CONT_UNIT": {},
+            "CREATEDON": {},
+            "CRM_PROD": {},
+            "DIVISION": {},
+            "EANUPC": {},
+            "EXTMATLGRP": {},
+            "GROSS_CONT": {},
+            "GROSS_WT": {},
+            "HEIGHT": {},
+            "IND_SECTOR": {},
+            "LENGHT": {},
+            "LOC_CURRCY": {},
+            "LOGSYS": {},
+            "MANUFACTOR": {},
+            "MANU_MATNR": {},
+            "MATL_CAT": {},
+            "MATL_GROUP": {},
+            "MATL_TYPE": {},
+            "ODQ_CHANGEMODE": {},
+            "ODQ_ENTITYCNTR": {}
+          }
+        }
+      },
+      "connections": {
+        "BW_SOURCE": {}
+      }
+    }
+  },
+  "$version": "1.0"
+}

@@ -1,0 +1,501 @@
+{
+  "definitions": {
+    "CY_TAB_MD04_V2": {
+      "kind": "entity",
+      "@EndUserText.label": "CY_TAB_MD04_V2",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "elements": {
+        "MATNR": {
+          "@EndUserText.label": "Material",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "WERKS": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "MRP_DATE": {
+          "@EndUserText.label": "Date",
+          "type": "cds.Date",
+          "key": false
+        },
+        "DELKZ": {
+          "@EndUserText.label": "Mrp element",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "DELB0": {
+          "@EndUserText.label": "Mrp element",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "DELNR": {
+          "@EndUserText.label": "Mrp element number",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "DELPS": {
+          "@EndUserText.label": "Mrp element item",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "PLUMI": {
+          "@EndUserText.label": "Plus/minus",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "MNG01": {
+          "@EndUserText.label": "Rec./reqd quantity",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 13,
+          "scale": 3
+        },
+        "MEINS": {
+          "@EndUserText.label": "Base unit of measure",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "SNAPSHOT_DATE": {
+          "@EndUserText.label": "Date",
+          "type": "cds.Date",
+          "key": false
+        },
+        "ODQ_ENTITYCNTR": {
+          "@EndUserText.label": "Number of data units (data records for example)",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 19,
+          "scale": 0
+        },
+        "__load_package_id": {
+          "@EndUserText.label": "__load_package_id",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 256
+        }
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "replicationflows": {
+    "RF_CY_MD04": {
+      "kind": "sap.dis.replicationflow",
+      "@EndUserText.label": "RF CY MD04",
+      "contents": {
+        "description": "RF_CY_MD04",
+        "sourceSystem": [
+          {
+            "connectionId": "S4_SOURCE",
+            "connectionType": "SAPS4HANAOP",
+            "container": "/ODP_SAPI",
+            "maxConnections": 10,
+            "isGeneric": false,
+            "metadata": {}
+          }
+        ],
+        "targetSystem": [
+          {
+            "connectionId": "$DWC",
+            "connectionType": "HANA",
+            "container": "",
+            "maxConnections": 10,
+            "isGeneric": false,
+            "metadata": {
+              "connectionMetaschema": {
+                "sources": [
+                  "SAP"
+                ]
+              }
+            }
+          }
+        ],
+        "vTypes": {
+          "scalar": {
+            "string_40": {
+              "name": "string_40",
+              "description": "String(40)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 40
+            },
+            "string_4": {
+              "name": "string_4",
+              "description": "String(4)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 4
+            },
+            "string_2": {
+              "name": "string_2",
+              "description": "String(2)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 2
+            },
+            "string_6": {
+              "name": "string_6",
+              "description": "String(6)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 6
+            },
+            "string_12": {
+              "name": "string_12",
+              "description": "String(12)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 12
+            },
+            "string_1": {
+              "name": "string_1",
+              "description": "String(1)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 1
+            },
+            "decimal_13_3": {
+              "name": "decimal_13_3",
+              "description": "Decimal(13,3)",
+              "vflow.type": "scalar",
+              "template": "decimal",
+              "value.precision": 13,
+              "value.scale": 3
+            },
+            "string_3": {
+              "name": "string_3",
+              "description": "String(3)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 3
+            },
+            "decimal_19_0": {
+              "name": "decimal_19_0",
+              "description": "Decimal(19,0)",
+              "vflow.type": "scalar",
+              "template": "decimal",
+              "value.precision": 19,
+              "value.scale": 0
+            },
+            "binary_256": {
+              "name": "binary_256",
+              "description": "Binary(256)",
+              "vflow.type": "scalar",
+              "template": "binary",
+              "value.length": 256
+            }
+          }
+        },
+        "replicationTasks": [
+          {
+            "name": "replicationtask1",
+            "loadType": "INITIAL",
+            "priority": 50,
+            "truncate": true,
+            "sourceObject": {
+              "name": "ZCY_DS_MD04",
+              "definition": {
+                "columns": [
+                  {
+                    "name": "MATNR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "businessName": "Material",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "WERKS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "Plant",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MRP_DATE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.date",
+                    "businessName": "Date",
+                    "metadata": {
+                      "nativeType": {
+                        "datatype": "string",
+                        "length": 8
+                      },
+                      "TemplateType": {
+                        "datatype": "date"
+                      }
+                    }
+                  },
+                  {
+                    "name": "DELKZ",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "Mrp element",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DELB0",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_6",
+                    "businessName": "Mrp element",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DELNR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_12",
+                    "businessName": "Mrp element number",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DELPS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_6",
+                    "businessName": "Mrp element item",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PLUMI",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "Plus/minus",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MNG01",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_13_3",
+                    "businessName": "Rec./reqd quantity",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MEINS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "Base unit of measure",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SNAPSHOT_DATE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.date",
+                    "businessName": "Date",
+                    "metadata": {
+                      "nativeType": {
+                        "datatype": "string",
+                        "length": 8
+                      },
+                      "TemplateType": {
+                        "datatype": "date"
+                      }
+                    }
+                  },
+                  {
+                    "name": "ODQ_ENTITYCNTR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_19_0",
+                    "businessName": "Number of data units (data records for example)",
+                    "metadata": {}
+                  }
+                ],
+                "keys": []
+              },
+              "metadata": {
+                "type": "tabular",
+                "isDeltaDisabled": true,
+                "invalidColumns": [
+                  "ODQ_CHANGEMODE"
+                ],
+                "isSourceWithoutPK": true,
+                "hasSourceSchemaConfigureCapability": true
+              },
+              "businessName": "Md04 stock requirements"
+            },
+            "targetObject": {
+              "name": "CY_TAB_MD04_V2",
+              "definition": {
+                "columns": [
+                  {
+                    "name": "MATNR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_40",
+                    "businessName": "Material",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "WERKS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "Plant",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MRP_DATE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.date",
+                    "businessName": "Date",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DELKZ",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "Mrp element",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DELB0",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_6",
+                    "businessName": "Mrp element",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DELNR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_12",
+                    "businessName": "Mrp element number",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DELPS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_6",
+                    "businessName": "Mrp element item",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "PLUMI",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "Plus/minus",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MNG01",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_13_3",
+                    "businessName": "Rec./reqd quantity",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "MEINS",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_3",
+                    "businessName": "Base unit of measure",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SNAPSHOT_DATE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.date",
+                    "businessName": "Date",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_ENTITYCNTR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_19_0",
+                    "businessName": "Number of data units (data records for example)",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "__load_package_id",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.binary_256",
+                    "businessName": "__load_package_id",
+                    "metadata": {}
+                  }
+                ],
+                "keys": []
+              },
+              "metadata": {
+                "isNew": false,
+                "isDPIDDataset": true
+              },
+              "businessName": "CY_TAB_MD04_V2"
+            },
+            "transform": {
+              "name": "PRJ_PLANT_1710",
+              "attributeMappings": [
+                {
+                  "target": "__load_package_id",
+                  "expression": "\"Skip Mapping\""
+                }
+              ],
+              "filters": [
+                {
+                  "name": "WERKS",
+                  "elements": [
+                    {
+                      "low": "1710",
+                      "comparison": "=",
+                      "isExcluding": false
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "replicationTaskSetting": {
+          "hasSkipMappingCapability": true
+        },
+        "replicationFlowSetting": {
+          "ABAPcontentTypeDisabled": false,
+          "ABAPcontentType": "Template Type"
+        },
+        "deltaLoadTrigger": "ON_DELTA_INTERVAL"
+      },
+      "sources": {},
+      "targets": {
+        "CY_TAB_MD04_V2": {
+          "elements": {
+            "MATNR": {},
+            "WERKS": {},
+            "MRP_DATE": {},
+            "DELKZ": {},
+            "DELB0": {},
+            "DELNR": {},
+            "DELPS": {},
+            "PLUMI": {},
+            "MNG01": {},
+            "MEINS": {},
+            "SNAPSHOT_DATE": {},
+            "ODQ_ENTITYCNTR": {},
+            "__load_package_id": {}
+          }
+        }
+      },
+      "connections": {
+        "S4_SOURCE": {}
+      }
+    }
+  },
+  "$version": "1.0"
+}
