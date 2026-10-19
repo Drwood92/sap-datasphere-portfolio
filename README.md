@@ -2,6 +2,8 @@
 
 Hi, I'm Cyril, an SAP BW consultant in Germany. I've worked with BW since 2020: data models, ABAP routines, process chains, queries and SAC.
 
+🔗 **[Follow my journey on LinkedIn](https://www.linkedin.com/in/cyril-adeyemi-333629104/)**
+
 Everyone in our world is talking about Datasphere. I didn't want to just read about it. I wanted to **build** with it, break things and understand *why* they broke. This repo is the result.
 
 Everything here was built by me on training systems (S/4HANA 2025, BW/4HANA 2023 and a Datasphere trial), with my own objects and my own data. The files are CSN/JSON exports of the Datasphere objects. They contain definitions only, no data.
@@ -82,16 +84,55 @@ The course exercise sums net value per year and ignores the currency. My data ha
 - A `JOIN` without `ON` isn't finished. The error "expecting 'on'" says exactly that.
 - An aggregated view (only 4 rows) is fine for a check, but a poor base for an analytic model. Keep the fact at item level and let the model do the summing, as you would in BW.
 
+**View 3: the whole fact view, rebuilt in SQL.** `CY_SQL_FACT_SALES`
+The same as my graphical fact view: header + item join, order filter, calculated margin, item level, with no aggregation. It returns **183 rows**, exactly the same as the graphical version. One stubborn parse error ("expecting ',' or 'from'") disappeared once I deleted everything and pasted a clean copy. Something invisible had crept in.
+
+---
+
+## Project 4: Delta loads, watching a change travel from BW to Datasphere
+
+My first flows were "Initial Only". In real projects you don't reload everything every night; you move only what changed. So I tested delta end to end.
+
+**The setup** (`CY_RF_BW_SALES_DELTA.json`)
+- Source: the sales header ADSO in BW/4HANA (a Standard ADSO, so it has a change log)
+- Load type **Initial and Delta**, into a **new** target table `CY_TAB_SALESHEAD_D` with **Delta Capture** switched on. Datasphere adds two columns: `Change_Type` and `Change_Date`.
+- Initial load: **80 rows in 52 seconds**. After that the run never "completes": run type *Permanent*, duration ∞, and it checks for changes every hour.
+
+**The test:** three changes in BW
+| Document | Change | Business story |
+|---|---|---|
+| 0090000005 | AG → TA | a quotation became an order |
+| 0090000002 | customer 127 → 201 | customer corrected |
+| 0090000081 | new | a new order |
+
+**What happened**
+- The BW change log showed **5 rows**: a before image (X) and an after image for each change, plus one new record (N).
+- At the next delta window, Datasphere picked up **exactly 5 operations**.
+- The target table ended with **81 rows** (80 + 1). The two changes were applied as updates, not extra rows.
+
+**Reading the result**
+| Column | From | Values I saw |
+|---|---|---|
+| `ODQ_CHANGEMODE` | BW / ODQ | C = created, U = updated |
+| `Change_Type` | Datasphere | L = initial load, A = upsert (changed), I = insert (new) |
+
+**What tripped me up**
+- **Order matters.** Delta works like a bookmark: start the initial load first, then change the source. Change it before, and your delta is empty.
+- **My first BW load brought 80 rows instead of 3.** In BW/4HANA the DTP keeps its own copy of the flat-file path. I had changed the DataSource, but the DTP still read the old file.
+- `Change_Date` is stored in **UTC**, so it looked two hours "wrong" until I realised.
+- "Retrying" in the monitor doesn't mean failure. It means "waiting for the next delta window".
+
 ---
 
 ## What I've learned so far
 
 - Datasphere doesn't replace BW thinking. It **rewards** it. Granularity, keys, units and currencies matter just as much.
+- Delta isn't magic. It's the same before/after-image logic as a BW change log, just picked up by a different tool.
 - Graphical views are SQL underneath. Reading the generated SQL is the fastest way to understand what you built.
 - The hard parts aren't the clicks. They're the *why*: why Template Type, why 1:n, why exception aggregation.
 - Building it yourself beats watching ten tutorials.
 
-I'm still learning, and I post the journey step by step in my weekly LinkedIn series.
+I'm still learning, and I post the journey step by step in my weekly [LinkedIn series](https://www.linkedin.com/in/cyril-adeyemi-333629104/).
 
 ## Try it yourself
 
@@ -100,6 +141,4 @@ The replication flows expect source connections named `S4_SOURCE` (S/4HANA) and 
 
 ---
 
-*Questions, feedback or your own war stories? I'd love to hear them. Connect with me on LinkedIn.*
-
-https://www.linkedin.com/in/cyril-adeyemi-333629104/
+*Questions, feedback or your own war stories? I'd love to hear them. [Connect with me on LinkedIn](https://www.linkedin.com/in/cyril-adeyemi-333629104/).*

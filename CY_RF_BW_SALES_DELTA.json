@@ -1,0 +1,641 @@
+{
+  "definitions": {
+    "CY_TAB_SALESHEAD_D_Delta": {
+      "kind": "entity",
+      "@EndUserText.label": "CY_TAB_SALESHEAD_D",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "CY_TAB_SALESHEAD_D",
+      "elements": {
+        "DOC_NUMBER": {
+          "@EndUserText.label": "DOC_NUMBER",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 10
+        },
+        "RECORDMODE": {
+          "@EndUserText.label": "RECORDMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DOC_TYPE": {
+          "@EndUserText.label": "DOC_TYPE",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SALESORG": {
+          "@EndUserText.label": "SALESORG",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CALDAY": {
+          "@EndUserText.label": "CALDAY",
+          "type": "cds.Date",
+          "key": false
+        },
+        "CALMONTH": {
+          "@EndUserText.label": "CALMONTH",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CALMONTH2": {
+          "@EndUserText.label": "CALMONTH2",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CALYEAR": {
+          "@EndUserText.label": "CALYEAR",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CUSTOMER": {
+          "@EndUserText.label": "CUSTOMER",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ODQ_CHANGEMODE": {
+          "@EndUserText.label": "ODQ_CHANGEMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ODQ_ENTITYCNTR": {
+          "@EndUserText.label": "ODQ_ENTITYCNTR",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 19,
+          "scale": 0
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "notNull": true,
+          "length": 1,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    },
+    "CY_TAB_SALESHEAD_D": {
+      "kind": "entity",
+      "@EndUserText.label": "CY_TAB_SALESHEAD_D",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "CY_TAB_SALESHEAD_D_Delta"
+        ]
+      },
+      "elements": {
+        "DOC_NUMBER": {
+          "@EndUserText.label": "DOC_NUMBER",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 10
+        },
+        "RECORDMODE": {
+          "@EndUserText.label": "RECORDMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DOC_TYPE": {
+          "@EndUserText.label": "DOC_TYPE",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SALESORG": {
+          "@EndUserText.label": "SALESORG",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CALDAY": {
+          "@EndUserText.label": "CALDAY",
+          "type": "cds.Date",
+          "key": false
+        },
+        "CALMONTH": {
+          "@EndUserText.label": "CALMONTH",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CALMONTH2": {
+          "@EndUserText.label": "CALMONTH2",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CALYEAR": {
+          "@EndUserText.label": "CALYEAR",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CUSTOMER": {
+          "@EndUserText.label": "CUSTOMER",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ODQ_CHANGEMODE": {
+          "@EndUserText.label": "ODQ_CHANGEMODE",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ODQ_ENTITYCNTR": {
+          "@EndUserText.label": "ODQ_ENTITYCNTR",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 19,
+          "scale": 0
+        }
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "CY_TAB_SALESHEAD_D_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "DOC_NUMBER"
+              ]
+            },
+            {
+              "ref": [
+                "RECORDMODE"
+              ]
+            },
+            {
+              "ref": [
+                "DOC_TYPE"
+              ]
+            },
+            {
+              "ref": [
+                "SALESORG"
+              ]
+            },
+            {
+              "ref": [
+                "CALDAY"
+              ]
+            },
+            {
+              "ref": [
+                "CALMONTH"
+              ]
+            },
+            {
+              "ref": [
+                "CALMONTH2"
+              ]
+            },
+            {
+              "ref": [
+                "CALYEAR"
+              ]
+            },
+            {
+              "ref": [
+                "CUSTOMER"
+              ]
+            },
+            {
+              "ref": [
+                "ODQ_CHANGEMODE"
+              ]
+            },
+            {
+              "ref": [
+                "ODQ_ENTITYCNTR"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JABIVHZX"
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "replicationflows": {
+    "CY_RF_BW_SALES_DELTA": {
+      "kind": "sap.dis.replicationflow",
+      "@EndUserText.label": "RF CY BW Sales Delta",
+      "contents": {
+        "description": "CY_RF_BW_SALES_DELTA",
+        "sourceSystem": [
+          {
+            "connectionId": "BW_SOURCE",
+            "connectionType": "SAPBW",
+            "container": "/BW",
+            "maxConnections": 10,
+            "isGeneric": false,
+            "metadata": {},
+            "properties": {
+              "odp.read.maxPartitions": "3",
+              "odp.read.truncateLongData": "true",
+              "odp.read.replaceInvalidCharacter": "true"
+            }
+          }
+        ],
+        "targetSystem": [
+          {
+            "connectionId": "$DWC",
+            "connectionType": "HANA",
+            "container": "",
+            "maxConnections": 10,
+            "isGeneric": false,
+            "metadata": {
+              "connectionMetaschema": {
+                "sources": [
+                  "SAP"
+                ]
+              }
+            }
+          }
+        ],
+        "vTypes": {
+          "scalar": {
+            "string_10": {
+              "name": "string_10",
+              "description": "String(10)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 10
+            },
+            "string_1": {
+              "name": "string_1",
+              "description": "String(1)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 1
+            },
+            "string_4": {
+              "name": "string_4",
+              "description": "String(4)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 4
+            },
+            "string_6": {
+              "name": "string_6",
+              "description": "String(6)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 6
+            },
+            "string_2": {
+              "name": "string_2",
+              "description": "String(2)",
+              "vflow.type": "scalar",
+              "template": "string",
+              "value.length": 2
+            },
+            "decimal_19_0": {
+              "name": "decimal_19_0",
+              "description": "Decimal(19,0)",
+              "vflow.type": "scalar",
+              "template": "decimal",
+              "value.precision": 19,
+              "value.scale": 0
+            }
+          }
+        },
+        "replicationTasks": [
+          {
+            "name": "replicationtask1",
+            "loadType": "REPLICATE",
+            "priority": 50,
+            "truncate": false,
+            "sourceObject": {
+              "name": "QCYSAHDR$F",
+              "definition": {
+                "columns": [
+                  {
+                    "name": "DOC_NUMBER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "key": true,
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RECORDMODE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DOC_TYPE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SALESORG",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CALDAY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.date",
+                    "metadata": {
+                      "nativeType": {
+                        "datatype": "string",
+                        "length": 10
+                      },
+                      "TemplateType": {
+                        "datatype": "date"
+                      }
+                    }
+                  },
+                  {
+                    "name": "CALMONTH",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_6",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CALMONTH2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CALYEAR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CUSTOMER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_CHANGEMODE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_ENTITYCNTR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_19_0",
+                    "metadata": {}
+                  }
+                ],
+                "keys": [
+                  "DOC_NUMBER"
+                ]
+              },
+              "metadata": {
+                "type": "tabular"
+              },
+              "properties": {
+                "odp.read.maxPartitions": "3",
+                "odp.read.truncateLongData": "true",
+                "odp.read.replaceInvalidCharacter": "true"
+              }
+            },
+            "targetObject": {
+              "name": "CY_TAB_SALESHEAD_D_Delta",
+              "definition": {
+                "columns": [
+                  {
+                    "name": "DOC_NUMBER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "key": true,
+                    "businessName": "DOC_NUMBER",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "RECORDMODE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "RECORDMODE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "DOC_TYPE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "DOC_TYPE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "SALESORG",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "SALESORG",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CALDAY",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.date",
+                    "businessName": "CALDAY",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CALMONTH",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_6",
+                    "businessName": "CALMONTH",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CALMONTH2",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_2",
+                    "businessName": "CALMONTH2",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CALYEAR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_4",
+                    "businessName": "CALYEAR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "CUSTOMER",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_10",
+                    "businessName": "CUSTOMER",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_CHANGEMODE",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "ODQ_CHANGEMODE",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "ODQ_ENTITYCNTR",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.decimal_19_0",
+                    "businessName": "ODQ_ENTITYCNTR",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "Change_Type",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "$DYNAMIC.string_1",
+                    "businessName": "Change Type",
+                    "metadata": {}
+                  },
+                  {
+                    "name": "Change_Date",
+                    "vflow.type": "scalar",
+                    "vtype-ID": "com.sap.core.timestamp",
+                    "businessName": "Change Date",
+                    "metadata": {}
+                  }
+                ],
+                "keys": [
+                  "DOC_NUMBER"
+                ]
+              },
+              "metadata": {
+                "isNew": false
+              },
+              "properties": {
+                "com.sap.datasuite.cdc.mode.column": "Change_Type",
+                "com.sap.datasuite.cdc.timestamp.column": "Change_Date",
+                "com.sap.datasuite.tableCategory": "DELTA"
+              },
+              "businessName": "CY_TAB_SALESHEAD_D"
+            },
+            "deltaCheckInterval": 3600
+          }
+        ],
+        "replicationTaskSetting": {
+          "hasSkipMappingCapability": true
+        },
+        "replicationFlowSetting": {
+          "ABAPcontentType": "Template Type"
+        },
+        "deltaLoadTrigger": "ON_DELTA_INTERVAL"
+      },
+      "sources": {},
+      "targets": {
+        "CY_TAB_SALESHEAD_D_Delta": {
+          "elements": {
+            "DOC_NUMBER": {},
+            "RECORDMODE": {},
+            "DOC_TYPE": {},
+            "SALESORG": {},
+            "CALDAY": {},
+            "CALMONTH": {},
+            "CALMONTH2": {},
+            "CALYEAR": {},
+            "CUSTOMER": {},
+            "ODQ_CHANGEMODE": {},
+            "ODQ_ENTITYCNTR": {},
+            "Change_Type": {},
+            "Change_Date": {}
+          }
+        }
+      },
+      "connections": {
+        "GTBW4HANA2023": {}
+      }
+    }
+  },
+  "$version": "1.0"
+}
