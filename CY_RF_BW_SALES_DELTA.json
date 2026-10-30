@@ -633,7 +633,7 @@
         }
       },
       "connections": {
-        "GTBW4HANA2023": {}
+        "BW_SOURCE": {}
       }
     }
   },

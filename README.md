@@ -6,7 +6,7 @@ Hi, I'm Cyril, an SAP BW consultant in Germany. I've worked with BW since 2020: 
 
 Everyone in our world is talking about Datasphere. I didn't want to just read about it. I wanted to **build** with it, break things and understand *why* they broke. This repo is the result.
 
-Everything here was built by me on training systems (S/4HANA 2025, BW/4HANA 2023 and a Datasphere trial), with my own objects and my own data. The files are CSN/JSON exports of the Datasphere objects. They contain definitions only, no data.
+Everything here was built by me on training systems (S/4HANA 2025, BW/4HANA 2023 and a Datasphere system connected to them), with my own objects and my own data. The files are CSN/JSON exports of the Datasphere objects. They contain definitions only, no data.
 
 ---
 
@@ -124,11 +124,48 @@ My first flows were "Initial Only". In real projects you don't reload everything
 
 ---
 
+## Project 5: From one plant to a schedule, with history
+
+A load that works once isn't a pipeline. I wanted MD04 to run every morning, keep its history and cover more than one plant, all without me clicking "Run".
+
+**The setup** (`MD04_HISTORY_AND_CHAINS.json`)
+
+| Object | What it does |
+|---|---|
+| `RF_CY_MD04` → `CY_TAB_MD04_V2` | Plant 1710, **delete and load**: always the latest state |
+| `RF_CY_MD04_1720` → `CY_TAB_MD04_1720` | The same for plant 1720 |
+| `RF_CY_MD04_HIST` → `CY_TAB_MD04_H` | Plant 1710, **adds rows** on every run, so every snapshot date stays |
+| `RF_CY_MD04_1720_HIST` → `CY_TAB_MD04_H_1720` | The same for plant 1720 |
+| `TC_MD04_Current` | Task chain: the two current flows, daily at 05:00 (Berlin time) |
+| `TC_MD04_History` | Task chain: the two history flows, daily at 06:00 (Berlin time) |
+| `CY_VW_MD04_CURRENT` | Union All of the two current tables: one view for all plants |
+
+**Why two flows for the same plant?**
+My plant load had **Delete All Before Loading** switched on, so every run emptied the table first. A clean copy every time, but yesterday was gone. So I saved the flow as a new one, renamed the target to `CY_TAB_MD04_H`, switched the delete off and kept the same source and filter. After a second run the table held **11,696 rows**, exactly 2 x 5,848: two snapshot dates, nothing overwritten.
+
+**What went wrong (and what it taught me):**
+
+- 🔗 **Renaming the target detached my projection.** After the rename the flow showed *Projections (0)*. Without the filter it would have loaded every plant. I had to add the projection again, with `WERKS = 1710`.
+- 🚫 **Two flows, one table: not allowed.** My plan was to send plant 1720 into the same history table. Deployment stopped: *a target table can't be used in two replication flows*. In BW I would load several sources into one ADSO with several DTPs. Here it is **one flow and one table per plant**, combined later in a view.
+- 🕳️ **Plant 1720 loaded zero rows, with no error.** RSA3 returned nothing and MD04 was empty: the plant had materials, but no MRP data. The extractor can only return what MRP has planned. On my training system I created a purchase requisition (ME51N, 10 items) and then RSA3 showed **10 records** and the flow loaded 10 into 10.
+- 🕐 **The schedule defaults to UTC.** 11:30 UTC is 12:30 in Berlin. I switched the time zone to Europe/Berlin. The clock popup did not keep my value, so I typed the time in.
+- 📆 **One load per day.** Two loads on the same day gave plant 1720 **20 rows** for that date (my manual test plus the chain run). The snapshot date is the key, so a clean history needs one scheduled run per day.
+- 👤 **No technical user.** The schedule owner list for a technical user was empty on my system, so I used my own user. In production a schedule should not depend on one person's account.
+
+**It ran by itself.** The first scheduled run started at 06:00:41, without me, and finished 26 minutes later with all three flows completed. Next to the current state, the history grows by one snapshot a day.
+
+**The union view.** `CY_VW_MD04_CURRENT` gives **5,858 rows**: 5,848 from plant 1710 plus 10 from plant 1720. The Impact and Lineage Analysis shows the whole path: two flows, two tables, one view.
+
+---
+
 ## What I've learned so far
 
 - Datasphere doesn't replace BW thinking. It **rewards** it. Granularity, keys, units and currencies matter just as much.
 - Delta isn't magic. It's the same before/after-image logic as a BW change log, just picked up by a different tool.
 - Graphical views are SQL underneath. Reading the generated SQL is the fastest way to understand what you built.
+- A load that overwrites keeps no history. Keep a second flow that adds rows, with a snapshot date as part of the data.
+- In Datasphere a table can serve only one replication flow, so it is one flow and one table per slice (here: per plant), joined later in a view.
+- A pipeline that runs by itself still needs the boring things right: time zone, one run a day, and a technical user.
 - The hard parts aren't the clicks. They're the *why*: why Template Type, why 1:n, why exception aggregation.
 - Building it yourself beats watching ten tutorials.
 
@@ -138,6 +175,7 @@ I'm still learning, and I post the journey step by step in my weekly [LinkedIn s
 
 Datasphere → Data Builder → **Import → Import Objects from CSN/JSON File**.
 The replication flows expect source connections named `S4_SOURCE` (S/4HANA) and `BW_SOURCE` (BW/4HANA), or you can remap them after import.
+Import the objects of one file together, because the task chains refer to the flows.
 
 ---
 
