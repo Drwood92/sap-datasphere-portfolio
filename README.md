@@ -158,6 +158,32 @@ My plant load had **Delete All Before Loading** switched on, so every run emptie
 
 ---
 
+## Project 6: From rows to a number that makes sense
+
+MD04 rows are not a report. One column holds the quantity, but it means three different things, depending on the column *Plus/minus*: **B** is stock on hand, **+** is a receipt (for example a purchase requisition) and **-** is a requirement (for example a reservation). So I turned the union view into a fact view and built an analytic model on top of it.
+
+**What I built:**
+
+| Object | What it does |
+|---|---|
+| `CY_VW_MD04_CURRENT` | Now a **Fact**: the quantity `MNG01` is a measure (SUM), everything else is an attribute |
+| `CY_AM_MD04` | Analytic model on the view, with the measures below |
+| `Stock`, `Receipts`, `Requirements` | **Restricted measures** on the quantity: `PLUMI = 'B'`, `PLUMI = '+'`, `PLUMI = '-'` |
+| `Projected Availability` | **Calculated measure**: Stock + Receipts - Requirements |
+
+**Why a plain sum is wrong.** The data preview of the first model showed one number: **4,260,414.6**. It looks fine, but it adds the requirements to the stock as if they were the same thing. Split by *Plus/minus* it was 2,153,259 (stock) + 1,071,594.8 (receipts) + 1,035,560.8 (requirements). The projected availability is **2,189,293**: about half of the plain sum.
+
+**By plant.** Plant 1710 has stock, receipts and requirements (projected 2,186,333). Plant 1720 only has receipts: 2,960 from the 10 purchase requisition items I created, so its projected availability is 2,960.
+
+**Good to know:**
+
+- The analytic model builds on the view inside Datasphere, so **Expose for Consumption** stays off. That switch is only for outside tools.
+- The quantity mixes units of measure (pieces, litres, ...). For a real report the unit belongs in the rows next to the measure.
+
+📁 `MD04_VIEW_AND_ANALYTIC_MODEL.json` (the view, the analytic model and the tables they depend on)
+
+---
+
 ## What I've learned so far
 
 - Datasphere doesn't replace BW thinking. It **rewards** it. Granularity, keys, units and currencies matter just as much.
@@ -166,6 +192,7 @@ My plant load had **Delete All Before Loading** switched on, so every run emptie
 - A load that overwrites keeps no history. Keep a second flow that adds rows, with a snapshot date as part of the data.
 - In Datasphere a table can serve only one replication flow, so it is one flow and one table per slice (here: per plant), joined later in a view.
 - A pipeline that runs by itself still needs the boring things right: time zone, one run a day, and a technical user.
+- A measure can mean different things in different rows. A plain sum can look right and still be wrong, so split it with restricted measures and check the total.
 - The hard parts aren't the clicks. They're the *why*: why Template Type, why 1:n, why exception aggregation.
 - Building it yourself beats watching ten tutorials.
 
@@ -176,6 +203,7 @@ I'm still learning, and I post the journey step by step in my weekly [LinkedIn s
 Datasphere → Data Builder → **Import → Import Objects from CSN/JSON File**.
 The replication flows expect source connections named `S4_SOURCE` (S/4HANA) and `BW_SOURCE` (BW/4HANA), or you can remap them after import.
 Import the objects of one file together, because the task chains refer to the flows.
+`CY_VW_MD04_CURRENT` is in both MD04 files: the one in `MD04_VIEW_AND_ANALYTIC_MODEL.json` is the newer version (a fact view), so import that file last.
 
 ---
 
